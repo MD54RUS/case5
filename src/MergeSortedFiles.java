@@ -15,17 +15,20 @@ class MergeSortedFiles {
    * @param sortType - направление сортировки
    * @throws IOException -
    */
-  static void merge(Queue<String> filesForMerge, String fileOutName, boolean sortType)
-      throws IOException {
+  static void merge(Queue<String> filesForMerge, String fileOutName, boolean sortType) throws IOException {
     if (filesForMerge.size() == 0) {
-      throw new RuntimeException("Невозможно получить данные.");
+      throw new RuntimeException("Unable to retrieve data.");
     }
     while (filesForMerge.size() > 1) {
       InputFileData source1 = new InputFileData(filesForMerge.poll());
       InputFileData source2 = new InputFileData(filesForMerge.poll());
       OutputFileData tempSource;
       if (filesForMerge.size() == 0) {
-        tempSource = new OutputFileData(fileOutName);
+        try {
+          tempSource = new OutputFileData(fileOutName);
+        } catch (IOException e) {
+          throw new IOException("Unable to save data in the specified file");
+        }
       } else {
         tempSource = FileIO.getTempContainer();
       }

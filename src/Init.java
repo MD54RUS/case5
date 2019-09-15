@@ -33,13 +33,13 @@ class Init {
   static void validate(String[] args) {
     initArgs(args);
     if (dataType == null) {
-      throw new RuntimeException("Не указан тип сортируемых данных");
+      throw new RuntimeException("Data type not specified.");
     }
     if (outFileName == null) {
-      throw new RuntimeException("Не указан выходной файл");
+      throw new RuntimeException("No output file specified.");
     }
     if (inputFileNames.isEmpty()) {
-      throw new RuntimeException("Не указан список входных файлов");
+      throw new RuntimeException("List of input files not specified.");
     }
   }
 }

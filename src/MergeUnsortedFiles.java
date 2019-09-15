@@ -56,7 +56,7 @@ class MergeUnsortedFiles {
       }
     } catch (IOException e) {
       // log e.printStackTrace();
-      throw new IOException("Невозможно сохранить данные в указанном файле");
+      throw new IOException("Unable to save data in the specified file");
     }
   }
 

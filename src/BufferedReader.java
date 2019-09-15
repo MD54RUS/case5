@@ -6,7 +6,7 @@ import java.util.List;
 /** лимитированное чтение данных */
 class BufferedReader {
   private static final int stringSize = 38; // размер String без данных в байтах
-  private static final int integerSize = 16; // размер Integer в байтах
+  private static final int integerSize = 32; // размер Integer в байтах
 
   /**
    * Читает данные указанного объема

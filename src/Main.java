@@ -51,7 +51,7 @@ public class Main {
 
     } catch (Exception ex) {
       if (ex.getMessage() != null) System.out.println(ex.getMessage());
-      else System.out.println("Произошла непредвиднная ошибка.");
+      else System.out.println("An unexpected error has occurred.");
       // log ex.printStackTrace();
       System.exit(-1);
     }
