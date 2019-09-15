@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 public abstract class FileIO implements AutoCloseable{
-    static String fileName;
+    String fileName;
 
     @Override
     public abstract void close() throws Exception;
@@ -23,6 +23,7 @@ public abstract class FileIO implements AutoCloseable{
         } catch (Exception ignored) {}
         if (fileName != null) {
             File thisFile = new File(fileName);
+            //noinspection ResultOfMethodCallIgnored
             thisFile.delete();
             fileName = null;
         }
@@ -38,8 +39,9 @@ public abstract class FileIO implements AutoCloseable{
     public static String dumpData(Comparable[] data) throws IOException {
         OutputFileData tempFile = getTempContainer();
         tempFile.writeData(data);
+        String result = tempFile.getFileName();
         tempFile.close();
-        return tempFile.getFileName();
+        return result;
     }
 
 

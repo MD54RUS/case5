@@ -79,7 +79,6 @@ public class OutputFileData extends FileIO {
     try {
       stream.close();
       stream = null;
-      fileName = null;
     } catch (IOException ignored) {
     }
   }
